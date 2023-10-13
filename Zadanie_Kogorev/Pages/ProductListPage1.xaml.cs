@@ -17,17 +17,19 @@ using Zadanie_Kogorev.Comps;
 namespace Zadanie_Kogorev.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ProductUserControl1.xaml
+    /// Логика взаимодействия для ProductListPage1.xaml
     /// </summary>
-    public partial class ProductUserControl1 : UserControl
+    public partial class ProductListPage1 : Page
     {
-        public ProductUserControl1(Product product)
+        public ProductListPage1()
         {
             InitializeComponent();
-            SaleTB.Text = product.Discount.ToString() + " %";
-            ProductDescriptionTB.Text = product.Description;
-            ReviewTB.Text = "1";
-            ProductPriceTB.Text = product.Cost.ToString();
+            IEnumerable<Product> productsList = App.DB.Product;
+
+            foreach (var item in productsList)
+            {
+                ProductWrap.Children.Add(new ProductUserControl1(item));
+            }
         }
     }
 }

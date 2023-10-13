@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Zadanie_Kogorev.Pages;
 
 namespace Zadanie_Kogorev
 {
@@ -23,6 +24,7 @@ namespace Zadanie_Kogorev
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new ProductListPage1());
         }
     }
 }
