@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.ColumnSpan="2" Fill="#FF75ABE6"></Rectangle>
+        <Rectangle Grid.RowSpan="3" Fill="#FF75ABE6"></Rectangle>
+
+        <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="5" Source="\Resources\school_logo.png"></Image>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="BackBTN" Margin="0 0 0 5">Back
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="13"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="NextBTN">Next
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="13"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+        <TextBlock x:Name="TitleTb" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">Магазин техники</TextBlock>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"></Frame>
     </Grid>
 </Window>

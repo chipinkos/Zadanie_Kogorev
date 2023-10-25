@@ -24,10 +24,13 @@ namespace Zadanie_Kogorev.Pages
         public ProductUserControl1(Product product)
         {
             InitializeComponent();
-            SaleTB.Text = product.Discount.ToString() + " %";
-            ProductDescriptionTB.Text = product.Description;
-            ReviewTB.Text = "1";
-            ProductPriceTB.Text = product.Cost.ToString();
+            ProductDescriptionTB.Text = product.GetDescription;
+            ProductPriceTB.Text = product.GetRelevancePrice;
+            OldProductPriceTB.Text = product.GetOldPrice;
+            SaleTB.Text = product.GetSale;
+            ReviewTB.Text = product.GetAverageFeedback;
+            CountReviewTB.Text = product.GetReviewesAmount;
         }
+
     }
 }
