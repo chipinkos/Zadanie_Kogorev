@@ -14,7 +14,8 @@ namespace Zadanie_Kogorev
     /// </summary>
     public partial class App : Application
     {
-        public static HardwareShop_KogEntities DB = new HardwareShop_KogEntities(); 
+        public static HardwareShop_KogEntities1 DB = new HardwareShop_KogEntities1();
+        public static bool isAdmin = false;
 
     }
 }

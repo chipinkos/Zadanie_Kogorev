@@ -13,10 +13,10 @@ namespace Zadanie_Kogorev.Comps
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HardwareShop_KogEntities : DbContext
+    public partial class HardwareShop_KogEntities1 : DbContext
     {
-        public HardwareShop_KogEntities()
-            : base("name=HardwareShop_KogEntities")
+        public HardwareShop_KogEntities1()
+            : base("name=HardwareShop_KogEntities1")
         {
         }
     

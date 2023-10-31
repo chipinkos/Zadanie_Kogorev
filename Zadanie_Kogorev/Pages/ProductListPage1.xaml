@@ -9,8 +9,41 @@
       Title="ProductListPage1">
 
     <Grid>
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled">
-            <WrapPanel Name="ProductWrap"></WrapPanel>
-        </ScrollViewer>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical"  Grid.Column="1">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock HorizontalAlignment="Center">По цене</TextBlock>
+                <ComboBox Name="PriceSortCB" SelectionChanged="PriceSortCB_SelectionChanged" >
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>По возростанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock HorizontalAlignment="Center">По скидке</TextBlock>
+                <ComboBox Name="DiscountSortCB" SelectionChanged="DiscountSortCB_SelectionChanged" >    
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>До 5%</ComboBoxItem>
+                    <ComboBoxItem>5%-15%</ComboBoxItem>
+                    <ComboBoxItem>15%-30%</ComboBoxItem>
+                    <ComboBoxItem>30%-70%</ComboBoxItem>
+                    <ComboBoxItem>От 70%</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <TextBlock HorizontalAlignment="Center">Поиск</TextBlock>
+                <TextBox Name ="SearchTextBox" Height="50" Width="90" TextChanged="SearchTextBox_TextChanged" ></TextBox>
+                <TextBlock x:Name="CountDataText"></TextBlock>
+            </StackPanel>
+            <Button x:Name="AddBt" Content="Добавить" Click="AddBt_Click"></Button>
+        </StackPanel>
+        <Border BorderBrush="#FF04a0ff" BorderThickness="3" >
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Column="0">
+                <WrapPanel Name ="ProductWrap"></WrapPanel>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Page>
